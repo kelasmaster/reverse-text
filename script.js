@@ -5,14 +5,17 @@ document.getElementById('transform-btn').addEventListener('click', function () {
   // Reverse the text
   const reversedText = userInput.split('').reverse().join('');
   document.getElementById('reversed-text').textContent = reversedText;
+  document.getElementById('hidden-reversed-text').textContent = reversedText; // Store reversed text
 
   // Mirror the text (displayed using CSS)
-  document.getElementById('mirrored-text').textContent = userInput;
+  const mirroredText = userInput;
+  document.getElementById('mirrored-text').textContent = mirroredText;
+  document.getElementById('hidden-mirrored-text').textContent = mirroredText; // Store mirrored text
 });
 
 // Copy reversed text
 document.getElementById('copy-reversed-btn').addEventListener('click', function () {
-  const reversedText = document.getElementById('reversed-text').textContent;
+  const reversedText = document.getElementById('hidden-reversed-text').textContent;
   navigator.clipboard.writeText(reversedText).then(() => {
     alert('Reversed text copied to clipboard!');
   }).catch(err => {
@@ -22,7 +25,7 @@ document.getElementById('copy-reversed-btn').addEventListener('click', function 
 
 // Copy mirrored text
 document.getElementById('copy-mirrored-btn').addEventListener('click', function () {
-  const mirroredText = document.getElementById('mirrored-text').textContent;
+  const mirroredText = document.getElementById('hidden-mirrored-text').textContent;
   navigator.clipboard.writeText(mirroredText).then(() => {
     alert('Mirrored text copied to clipboard!');
   }).catch(err => {
