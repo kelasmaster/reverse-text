@@ -71,13 +71,6 @@ button:hover {
   position: relative;
 }
 
-#mirrored-text {
-  transform: scaleX(-1);
-  display: inline-block;
-  font-size: 1.2rem;
-  color: #007bff;
-}
-
 .copy-btn {
   position: absolute;
   top: 10px;
